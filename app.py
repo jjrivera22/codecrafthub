@@ -14,10 +14,12 @@ import os
 import tempfile
 
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 
 # Create the Flask application
 app = Flask(__name__)
+CORS(app)
 
 # Store courses.json in the same directory as this Python file
 DATA_FILE = Path(__file__).resolve().parent / "courses.json"
